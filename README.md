@@ -107,7 +107,7 @@ C --> MOT["Motors"]
 | Folder | What is inside |
 | --- | --- |
 | [`esp32/esp1_driver_awareness/`](esp32/esp1_driver_awareness) | ESP32 #1: ECG, BPM, OLED, response and cancel buttons, buzzer, SIM800L, link to the Jetson (U8g2 library) |
-| [`esp32/esp1_driver_awareness_v2/`](esp32/esp1_driver_awareness_v2) | ESP32 #1, version 2: median-filtered BPM, auto-scaling ECG graph with BPM, 5 s response test with a beeping buzzer (Adafruit SH110X library) |
+| [`esp32/esp2_ecg_sms/`](esp32/esp2_ecg_sms) | ESP2 (ECG and SMS): median-filtered BPM, auto-scaling ECG graph with BPM, 5 s response test with a beeping buzzer, emergency SMS and call (Adafruit SH110X library) |
 
 Before uploading to the ESP32, set your Wi-Fi name and password, the Jetson IP, the emergency phone number and the location in the SMS text.
 
