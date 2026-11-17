@@ -21,6 +21,12 @@ Capstone project · B.Sc. Automotive Mechatronics Engineering · German Internat
 
 ---
 
+## About the project
+
+A car with a full AI system that takes over when the driver passes out while driving. A heart-rate (ECG) sensor on the steering wheel monitors the driver all the time. If the driver doesn't respond, the AI system steers the car by itself to a safe place on the right side of the road and stops. It then sends an SMS with the location coordinates and calls the emergency contact with a loud emergency beeping sound.
+
+The **NVIDIA Jetson Orin Nano** is the brain of the car: it runs the camera with YOLO object and lane detection (TensorRT) and ROS2, plans the safe pull-over, and sends the driving commands to the motor controller.
+
 ## The problem
 
 A driver who suddenly has a heart problem or falls asleep can lose control of the car in seconds. Most cars only react after a crash. This project reacts **before**: it detects the emergency, stops the car safely and gets help.
@@ -100,9 +106,10 @@ C --> MOT["Motors"]
 
 | Folder | What is inside |
 | --- | --- |
-| [`esp32/esp1_driver_awareness/`](esp32/esp1_driver_awareness) | ESP32 #1: ECG, BPM, OLED, response and cancel buttons, buzzer, SIM800L, link to the Jetson |
+| [`esp32/esp1_driver_awareness/`](esp32/esp1_driver_awareness) | ESP32 #1: ECG, BPM, OLED, response and cancel buttons, buzzer, SIM800L, link to the Jetson (U8g2 library) |
+| [`esp32/esp1_driver_awareness_v2/`](esp32/esp1_driver_awareness_v2) | ESP32 #1, version 2: median-filtered BPM, auto-scaling ECG graph with BPM, 5 s response test with a beeping buzzer (Adafruit SH110X library) |
 
-Before uploading to the ESP32, set your Wi-Fi name and password, the Jetson IP, the emergency phone number and the location in the SMS text. Needs the **U8g2** library.
+Before uploading to the ESP32, set your Wi-Fi name and password, the Jetson IP, the emergency phone number and the location in the SMS text.
 
 The motor-control firmware, the ROS2 workspace and the vision pipeline will be added soon.
 
